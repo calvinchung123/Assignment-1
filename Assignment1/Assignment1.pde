@@ -1,6 +1,6 @@
 void setup()
 {
-  size(1000,1000);
+  size(1000,900);
   
 }
   int Sx =100;
@@ -8,6 +8,8 @@ void setup()
   int state = 0;
   int Mx1=0;
   int My1=0;
+  int rectx = 0;
+  int rectx2 = 1000;
 void draw()
 {
   background(255);
@@ -39,10 +41,10 @@ void draw()
      
     case 1:
       background(0);
-      stroke(#B4AD1B);
+      stroke(#B4AD1B, 100);
      if(Mx1 <= width)
      {
-         Mx1=Mx1+10;
+         Mx1=Mx1+15;
      } 
       for(int i=100;  i<1000; i=i+100)
       {
@@ -50,20 +52,27 @@ void draw()
       }
       
        if(My1 <= height)
-     {
-         My1=My1+10;
-     } 
+       {
+         My1=My1+15;
+       } 
       for(int i=100;  i<1000; i=i+100)
       {
-        line(i,0,i,My1);
+        line(i,0,i,My1); 
+      }
+      if(rectx <= 145)
+      {
+        rectx=rectx+5;
+      }
+      if(rectx2 >= 855)
+      {
+        rectx2=rectx2-5;
       }
       
-      
-    /*  if(Mx != width && My != height) 
-      {
-          line(Mx1,My1,Mx1,My2);
-          
-      }*/
       break;
   } 
+  stroke(#B4AD1B);
+  fill(0);
+  rect(rectx,900,300,400);
+  rect(rectx2, 900, 300, 400);
+
 }
