@@ -73,6 +73,8 @@ void draw()
         stroke(#B4AD1B);
         rect(150,750,200,50);
         rect(150,850,200,50);
+        rect(850,750,200,50);
+        
       }
       break;
   } 
