@@ -59,19 +59,24 @@ void draw()
       {
         line(i,0,i,My1); 
       }
-      if(rectx <= 145)
+      if(rectx <= 148)
       {
-        rectx=rectx+5;
+        rectx=rectx+2;
       }
-      if(rectx2 >= 855)
+      if(rectx2 >= 852)
       {
-        rectx2=rectx2-5;
+        rectx2=rectx2-2;
       }
-      
+      else if(rectx2 <= 852)
+      {  
+        fill(0);
+        stroke(#B4AD1B);
+        rect(150,750,200,50);
+      }
       break;
   } 
   stroke(#B4AD1B);
-  fill(0);
+  noFill();
   rect(rectx,900,300,400);
   rect(rectx2, 900, 300, 400);
 
