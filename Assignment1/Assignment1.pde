@@ -29,27 +29,7 @@ void draw()
   switch(state)
   {
     case 0:
-      background(#B4AD1B);
-      translate(width/2, height/2);
-      rotate(radians(frameCount));
-      rectMode(CENTER);
-      fill(0,0,0);
-      rect(0,0,Sx,Sy);
-      rotate(radians(-frameCount));
-      rectMode(CENTER);
-      textSize(Sx/10);
-      fill(255); 
-      text("Loading...",-120,0);
-      if (Sx != width && Sy != height) 
-      {
-        Sx=Sx+5;
-        Sy=Sy+5;
-      }
-      else
-      {
-        state = 1;
-      }
-      
+    loadingScreen();
       break;
      
     case 1:
