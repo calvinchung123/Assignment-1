@@ -1,6 +1,16 @@
+Button ButtonQ;
+Button ButtonW;
+Button ButtonO;
+Button ButtonP;
+
+
 void setup()
 {
   size(1000,900);
+  ButtonQ = new Button(150,750,200,50);
+  ButtonW = new Button(150,850,200,50);
+  ButtonO = new Button(850,750,200,50);
+  ButtonP = new Button(850,850,200,50);
   
 }
   int Sx =100;
@@ -13,6 +23,9 @@ void setup()
 void draw()
 {
   background(255);
+  
+  
+  
   switch(state)
   {
     case 0:
@@ -69,12 +82,11 @@ void draw()
       }
       else if(rectx2 <= 852)
       {  
-        fill(0);
-        stroke(#B4AD1B);
-        rect(150,750,200,50);
-        rect(150,850,200,50);
-        rect(850,750,200,50);
-        rect(850,850,200,50);
+         ButtonQ.drawButton();
+         ButtonW.drawButton();
+         ButtonO.drawButton();
+         ButtonP.drawButton();
+       
       }
       break;
   } 
