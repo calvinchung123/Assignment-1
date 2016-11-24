@@ -4,6 +4,7 @@ class Button
   int y1;
   int lengthb;
   int widthb;
+  boolean buttonPressed = false;
   
   Button(int startX, int startY, int len, int wid)
   {
@@ -17,9 +18,19 @@ class Button
   
   void drawButton()
   {  
-      fill(0);
-      stroke(#B4AD1B);    
-      rect(x1,y1,lengthb,widthb);
+      if(buttonPressed == true) 
+      {
+        fill(#B4AD1B);
+        stroke(#B4AD1B);    
+        rect(x1,y1,lengthb,widthb);
+        
+      }
+      else 
+      {
+        fill(0);
+        stroke(#B4AD1B);    
+        rect(x1,y1,lengthb,widthb);
+      }
   }
   
   
