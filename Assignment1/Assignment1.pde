@@ -23,6 +23,9 @@ void setup()
   float radary = 1000;
   float line1x=300;
   float line1y=700;
+  float rad=0;
+  float screenx1=500;
+  float screenx2=0;
 void draw()
 {
   background(255);
@@ -85,6 +88,7 @@ void draw()
         if(key == 'p')
         {
           ButtonP.buttonPressed = true;
+                  state = 2;
         }
         
       }
@@ -107,22 +111,56 @@ void draw()
       }
       if(radary<=750)
       {
-        noFill();
+         noFill();
          ellipse(500,750,50,50);
          ellipse(500,750,150,150);
          ellipse(500,750,250,250);
       }
+        if(radary<=750)
+      {  
+        if(rad<=280)
+        {
+          rad=rad+3;
+        }
+        else
+        {
+          rad=0;
+        }
+      }
+      if(radary<=750)
+      {
+         if(screenx2<800)
+         {
+           screenx2=screenx2+7;
+         }
+      }
+       if(screenx2<800)
+         {
+       
+         }
       break;
       
       case 2:
-        println("case2 stuffs");
+      background (255);
+      textSize(32);
+        text("case2 stuffs",500,500);
       break;
-  }  
-   line(300,700,line1x,line1y);
+  }
+  
+  
+   if(radary<=750)
+  {    
+  fill(0);
+  rectMode(CENTER);
+  stroke(#B4AD1B);
+  rect(500,350,screenx2,-495);
+  }
+  
+  line(300,700,line1x,line1y);
   stroke(#B4AD1B);
   noFill();
   rect(rectx,900,300,400);
   rect(rectx2, 900, 300, 400);
   rect(500,radary,300,300);
-  noFill();
+  ellipse(500,750,rad,rad);
 }
