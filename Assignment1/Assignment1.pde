@@ -102,6 +102,7 @@ void draw()
          ButtonP.drawButton();
        
       }
+       
        if(rectx2 <= 852)
       { 
         line(300,700,100,600);
@@ -129,6 +130,7 @@ void draw()
           rad=0;
         }
       }
+      rect(500,radary,300,300);
       if(radary<=750)
       {
          if(screenx2<800)
@@ -156,41 +158,47 @@ void draw()
            if(Sy1 <= width-510)
            {
                Sy1=Sy1+10;
-           }
+           }   
+     
          }
-         if(Sy1 >= width-510)
+          if(Sy1 >= width-510)
          {
            fill (#B4AD1B);
            ellipse(150,550,25,25);
            noFill();
          }
+         ellipse(500,750,rad,rad);
           if(Sy1 >= width-510)
          {
-           //line(
+           textSize(32);
+            text("Distance to destination:",510,150);
+            text("8.6 Light Years",510,180);
+            text("Q - Fuel Check",510,250);
+            text("W - Weapon Systems",510,300);
+            text("O - ",510,350);
+            text("p - Quit ",510,400);
+             //line(
          }
          }
       break;
-      
+     
       case 2:
       background (255);
       textSize(32);
         text("case2 stuffs",500,500);
       break;
   }
-
-  
-   if(radary<=750)
-  {    
-  rectMode(CENTER);
-  stroke(#B4AD1B);
-  rect(500,350,screenx2,-500);
-  }
-  
+        if(radary<=750)
+           {    
+                rectMode(CENTER);
+                stroke(#B4AD1B);
+                rect(500,350,screenx2,-500);
+          }
   line(300,700,line1x,line1y);
   stroke(#B4AD1B);
   noFill();
   rect(rectx,900,300,400);
   rect(rectx2, 900, 300, 400);
-  rect(500,radary,300,300);
-  ellipse(500,750,rad,rad);
+//rect(500,radary,300,300);
+ // ellipse(500,750,rad,rad);
 }
