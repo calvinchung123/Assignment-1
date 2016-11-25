@@ -13,6 +13,8 @@ void setup()
   ButtonP = new Button(850,850,200,50);
   
 }
+  float Sx1=100;
+  float Sy1=100;
   int Sx =100;
   int Sy = 100;
   int state = 0;
@@ -131,12 +133,41 @@ void draw()
       {
          if(screenx2<800)
          {
-           screenx2=screenx2+7;
+           stroke(#B4AD1B);
+           screenx2=screenx2+10;
          }
       }
-       if(screenx2<800)
+       if(screenx2>=800)
          {
-       
+           for(int i=100; i<=500; i=i+50)
+           {
+             line(i,102,i,Sx1);
+           }
+           if(Sx1 <= height-310)
+           {
+               Sx1=Sx1+15;
+           } 
+          if(screenx2>=800)
+           {
+           for(int i=100; i<=600; i=i+50)
+           {
+             line(100,i,Sy1,i);
+           }
+           if(Sy1 <= width-510)
+           {
+               Sy1=Sy1+10;
+           }
+         }
+         if(Sy1 >= width-510)
+         {
+           fill (#B4AD1B);
+           ellipse(150,550,25,25);
+           noFill();
+         }
+          if(Sy1 >= width-510)
+         {
+           //line(
+         }
          }
       break;
       
@@ -146,14 +177,13 @@ void draw()
         text("case2 stuffs",500,500);
       break;
   }
-  
+
   
    if(radary<=750)
   {    
-  fill(0);
   rectMode(CENTER);
   stroke(#B4AD1B);
-  rect(500,350,screenx2,-495);
+  rect(500,350,screenx2,-500);
   }
   
   line(300,700,line1x,line1y);
