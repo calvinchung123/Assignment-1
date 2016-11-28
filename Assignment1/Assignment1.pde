@@ -29,6 +29,7 @@ void setup()
   float screenx1=500;
   float screenx2=0;
   float a = 300, b = 400;
+  float fuel=0;
 void draw()
 {
   background(255);
@@ -79,6 +80,7 @@ void draw()
         if(key == 'q')
         {
           ButtonQ.buttonPressed = true;
+          state = 2;
         }
         if(key == 'w')
         {
@@ -91,7 +93,6 @@ void draw()
         if(key == 'p')
         {
           ButtonP.buttonPressed = true;
-                  state = 2;
         }
         
       }
@@ -173,18 +174,23 @@ void draw()
            fill (#B4AD1B);
            ellipse(450,150,25,25);
            noFill();
-           stroke(#B4AD1B);
+           stroke(255,0,0);
            line(150, 550, 450 - a, 150 + b);
-           if(a >= 0 )
-           {
-             a--;
-           }
-           if(b >= 0)
-           {
-             b -= 1.33;
-           }
-           
          }
+         if(a >= 0 )
+         {
+            a--;
+         }
+         if(b >= 0)
+         {
+             b -= 1.33;
+         }
+         else 
+         {
+           a=300;
+           b=400;
+         }
+          stroke(#B4AD1B);
          ellipse(500,750,rad,rad);
          if(Sy1 >= width-510)
          {
@@ -194,7 +200,8 @@ void draw()
               text("Q - Fuel Check",510,250);
               text("W - Weapon Systems",510,300);
               text("O - ",510,350);
-              text("p - Quit ",510,400);
+              text("P - Back",510,400);
+              
              
          }
        }
@@ -204,17 +211,67 @@ void draw()
                 stroke(#B4AD1B);
                 rect(500,350,screenx2,-500);
           }
-  line(300,700,line1x,line1y);
-  stroke(#B4AD1B);
-  noFill();
-  rect(rectx,900,300,400);
-  rect(rectx2, 900, 300, 400);
+         stroke(#B4AD1B);
+        line(300,700,line1x,line1y);
+        stroke(#B4AD1B);
+        noFill();
+        rect(rectx,900,300,400);
+        rect(rectx2, 900, 300, 400);
       break;
      
       case 2:
-      background (255);
+      rectMode(CORNER);
+      background (0);
       textSize(32);
-        text("case2 stuffs",500,500);
+      text("Fuel Update",400,800);
+      fill(0,255,0);
+      if(fuel<=800)
+      {
+         fuel=fuel+5;
+      }
+      if(fuel <=300)
+      {
+         fill(255,0,0);
+      }
+      else if(fuel <=600)
+      {
+        fill(255,255,0);
+      }
+      else if(fuel <=800)
+      {
+        fill (0,255,0);
+      }
+      rect(100,500,fuel,100);
+      if(fuel>=800)
+      {
+        noFill();
+        stroke(#B4AD1B);
+        rect(250,100,500,200);
+        fill(#B4AD1B);
+        text("Fuel is at 100%",370,200);
+      }
+      if (keyPressed)
+      {  
+        if(key == 'q')
+        {
+          ButtonQ.buttonPressed = true;
+          state = 2;
+        }
+        if(key == 'w')
+        {
+          ButtonW.buttonPressed = true;
+        }
+        if(key == 'o')
+        {
+          ButtonO.buttonPressed = true;
+        }
+        if(key == 'p')
+        {
+          ButtonP.buttonPressed = true;
+          state=1;
+        }
+        
+      }
       break;
   }
 
