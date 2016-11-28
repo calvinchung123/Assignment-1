@@ -85,6 +85,7 @@ void draw()
         if(key == 'w')
         {
           ButtonW.buttonPressed = true;
+          state =3;
         }
         if(key == 'o')
         {
@@ -260,6 +261,7 @@ void draw()
         if(key == 'w')
         {
           ButtonW.buttonPressed = true;
+          state =3;
         }
         if(key == 'o')
         {
@@ -273,6 +275,11 @@ void draw()
         
       }
       break;
+      
+      case 3:
+      drawGame();
+     
+      
   }
 
 }
