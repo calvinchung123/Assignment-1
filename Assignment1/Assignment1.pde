@@ -17,7 +17,7 @@ void setup()
   float Sy1=100;
   int Sx =100;
   int Sy = 100;
-  int state = 3;
+  int state = 0;
   int Mx1=0;
   int My1=0;
   int rectx = 0;
@@ -266,6 +266,7 @@ void draw()
         if(key == 'o')
         {
           ButtonO.buttonPressed = true;
+          state =4;
         }
         if(key == 'p')
         {

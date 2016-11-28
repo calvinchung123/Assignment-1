@@ -21,11 +21,12 @@
   
   //ship variables
   float shipx=200;
-  float shipwidth = 70;
+  float shipwidth = 100;
   float shipHeight = 20;
 
 void drawGame()
 {
+  rectMode(CENTER);
  background(0);
    //draw bug
    fill( 0,255,0);
@@ -73,7 +74,7 @@ void drawGame()
                       if( keyCode == UP)
                       {
                           stroke(255,0,0);
-                          line(shipx+35,height-shipHeight,shipx+30,0);
+                          line(shipx,height-70,shipx,0);
                           if(shipx+35>=xpos && shipx+35<=xpos+50)
                           {
                                counter=counter+10;
@@ -108,7 +109,7 @@ void drawGame()
              
              fill(255);
              text("score:",20,50);
-             text(counter,100,50);
+             text(counter,120,50);
       
            if(counter>=100)
            {
@@ -135,5 +136,30 @@ void drawGame()
      else
      {
        background(0);
+       text("Press 'P' to continue",350,500);
+           if (keyPressed)
+      {  
+        if(key == 'q')
+        {
+          ButtonQ.buttonPressed = true;
+          state = 2;
+        }
+        if(key == 'w')
+        {
+          ButtonW.buttonPressed = true;
+          state =3;
+        }
+        if(key == 'o')
+        {
+          ButtonO.buttonPressed = true;
+          state =4;
+        }
+        if(key == 'p')
+        {
+          ButtonP.buttonPressed = true;
+          state=1;
+        }
+        
+      }
      }
 }
