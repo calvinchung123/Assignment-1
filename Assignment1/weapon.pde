@@ -35,7 +35,7 @@ void drawGame()
     xpos = xpos + ( xspeed * xdirection );
     ypos = ypos + ( yspeed * ydirection );
 
-    if(ypos<=500-50)
+    if(ypos<=height-50 && counter!=300)
      {                     // move bug left/right
            if (xpos > width-boxWidth || xpos < boxWidth)
            {
@@ -65,7 +65,7 @@ void drawGame()
                       }
                       if( keyCode == RIGHT)
                       {
-                          if(shipx!=450)
+                          if(shipx!=1000)
                           {
                                shipx+=5;
                           }
@@ -108,9 +108,9 @@ void drawGame()
              
              fill(255);
              text("score:",20,50);
-             text(counter,50,50);
+             text(counter,100,50);
       
-           if(counter>=50)
+           if(counter>=100)
            {
                  fill( 0,255,0);
                  noStroke();
