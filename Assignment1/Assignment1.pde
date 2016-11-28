@@ -28,6 +28,7 @@ void setup()
   float rad=0;
   float screenx1=500;
   float screenx2=0;
+  float a = 300, b = 400;
 void draw()
 {
   background(255);
@@ -149,7 +150,7 @@ void draw()
            {
                Sx1=Sx1+15;
            } 
-          if(screenx2>=800)
+           if(screenx2>=800)
            {
            for(int i=100; i<=600; i=i+50)
            {
@@ -160,35 +161,44 @@ void draw()
                Sy1=Sy1+10;
            }   
      
-         }
-          if(Sy1 >= width-510)
+         }  
+         if(Sy1 >= width-510)
          {
            fill (#B4AD1B);
            ellipse(150,550,25,25);
            noFill();
          }
-         ellipse(500,750,rad,rad);
-          if(Sy1 >= width-510)
+         if(Sy1 >= width-510)
          {
-           textSize(32);
-            text("Distance to destination:",510,150);
-            text("8.6 Light Years",510,180);
-            text("Q - Fuel Check",510,250);
-            text("W - Weapon Systems",510,300);
-            text("O - ",510,350);
-            text("p - Quit ",510,400);
-             //line(
+           fill (#B4AD1B);
+           ellipse(450,150,25,25);
+           noFill();
+           stroke(#B4AD1B);
+           line(150, 550, 450 - a, 150 + b);
+           if(a >= 0 )
+           {
+             a--;
+           }
+           if(b >= 0)
+           {
+             b -= 1.33;
+           }
+           
          }
+         ellipse(500,750,rad,rad);
+         if(Sy1 >= width-510)
+         {
+              textSize(32);
+              text("Distance to destination:",510,150);
+              text("8.6 Light Years",510,180);
+              text("Q - Fuel Check",510,250);
+              text("W - Weapon Systems",510,300);
+              text("O - ",510,350);
+              text("p - Quit ",510,400);
+             
          }
-      break;
-     
-      case 2:
-      background (255);
-      textSize(32);
-        text("case2 stuffs",500,500);
-      break;
-  }
-        if(radary<=750)
+       }
+             if(radary<=750)
            {    
                 rectMode(CENTER);
                 stroke(#B4AD1B);
@@ -199,6 +209,13 @@ void draw()
   noFill();
   rect(rectx,900,300,400);
   rect(rectx2, 900, 300, 400);
-//rect(500,radary,300,300);
- // ellipse(500,750,rad,rad);
+      break;
+     
+      case 2:
+      background (255);
+      textSize(32);
+        text("case2 stuffs",500,500);
+      break;
+  }
+
 }
