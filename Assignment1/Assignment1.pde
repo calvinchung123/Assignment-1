@@ -17,7 +17,7 @@ void setup()
   float Sy1=100;
   int Sx =100;
   int Sy = 100;
-  int state = 0;
+  int state = 4;
   int Mx1=0;
   int My1=0;
   int rectx = 0;
@@ -30,6 +30,10 @@ void setup()
   float screenx2=0;
   float a = 300, b = 400;
   float fuel=0;
+  float rx=0; 
+  float ry=0;
+  float rad2=0;
+  int count=0;
 void draw()
 {
   background(255);
@@ -90,6 +94,7 @@ void draw()
         if(key == 'o')
         {
           ButtonO.buttonPressed = true;
+          state = 4;
         }
         if(key == 'p')
         {
@@ -200,7 +205,7 @@ void draw()
               text("8.6 Light Years",510,180);
               text("Q - Fuel Check",510,250);
               text("W - Weapon Systems",510,300);
-              text("O - ",510,350);
+              text("O - Radar ",510,350);
               text("P - Back",510,400);
               
              
@@ -272,6 +277,7 @@ void draw()
         {
           ButtonP.buttonPressed = true;
           state=1;
+          fuel=0;
         }
         
       }
@@ -279,8 +285,66 @@ void draw()
       
       case 3:
       drawGame();
-     
       
+      break;
+      
+      case 4:
+      noFill();
+      rectMode(CORNER);
+      background(0);
+      stroke(#B4AD1B);
+
+          if(rx<=900)
+          {
+            rx=rx+10;
+          }
+          else if(ry<=800)
+         {
+           ry=ry+10;
+         }
+         rect(50,50,rx,ry);
+         if(ry>=800)
+         {
+           ellipse(500,450,100,100);
+           ellipse(500,450,250,250);
+           ellipse(500,450,400,400);
+           ellipse(500,450,550,550);
+           ellipse(500,450,700,700);
+        
+         }
+         ellipse(500,450,rad2,rad2);
+         if(ry>=800)
+         {
+             if(rad2<=780)
+             {
+               rad2=rad2+5;
+               
+             }
+             else
+             {
+               rad2=0;
+             }
+         }
+         if(rad2>=200)
+          {
+            fill(255,0,0);
+            ellipse(450,500,25,25);
+            noFill();
+          }
+          if(rad2 >400)
+          {
+            fill(255,0,0);
+            ellipse(600,300,25,25);
+            noFill();
+          }
+          if(rad2>700)
+           {
+            fill(255,0,0);
+            ellipse(200,600,25,25);
+            noFill();
+          }
+          
+  
   }
 
 }

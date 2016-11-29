@@ -36,7 +36,7 @@ void drawGame()
     xpos = xpos + ( xspeed * xdirection );
     ypos = ypos + ( yspeed * ydirection );
 
-    if(ypos<=height-50 && counter!=300)
+    if(ypos<=height-50 && counter!=150)
      {                     // move bug left/right
            if (xpos > width-boxWidth || xpos < boxWidth)
            {
@@ -78,27 +78,27 @@ void drawGame()
                           if(shipx+35>=xpos && shipx+35<=xpos+50)
                           {
                                counter=counter+10;
-                               xpos=random(100,400);
+                               xpos=random(100,900);
                                ypos=0;
-                               if(xspeed<7)
+                               if(xspeed<=7)
                                {
-                                    xspeed=xspeed+.1;
+                                    xspeed=xspeed+.2;
                                }
-                               if(yspeed<3)
+                               if(yspeed<=3)
                                {
-                                     yspeed=yspeed+.1;
+                                     yspeed=yspeed+.2;
                                }
                           }
                           if(shipx+35>=xpos2 && shipx+35<=xpos2+50)
                           {
                                counter=counter+10;
-                               xpos2=random(100,400);
+                               xpos2=random(100,900);
                                ypos2=0;
-                               if(xspeed<7)
+                               if(xspeed<=7)
                                {
                                     xspeed2=xspeed2+.1;
                                }
-                               if(yspeed<3)
+                               if(yspeed<=3)
                                {
                                      yspeed2=yspeed2+.1;
                                }
@@ -111,7 +111,7 @@ void drawGame()
              text("score:",20,50);
              text(counter,120,50);
       
-           if(counter>=100)
+           if(counter>=50)
            {
                  fill( 0,255,0);
                  noStroke();
@@ -123,12 +123,12 @@ void drawGame()
                  
                   if (xpos2 > width-boxWidth || xpos2 < boxWidth)
                      {
-                          xdirection2 *= -1;
+                          xdirection2 *= -2;
                      }
                      //move bug down
                      if (ypos2 > height-boxWidth || ypos2 < 0)
                      {
-                         ydirection2 *= -1;
+                         ydirection2 *= -2;
                      }
            }  
    
@@ -137,7 +137,9 @@ void drawGame()
      {
        background(0);
        text("Press 'P' to continue",350,500);
-           if (keyPressed)
+     
+        
+      if (keyPressed)
       {  
         if(key == 'q')
         {

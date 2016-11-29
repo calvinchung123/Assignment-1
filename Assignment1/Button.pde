@@ -32,9 +32,10 @@ class Button
         rect(x1,y1,lengthb,widthb);
       }
   }
-  
-  
 }
+  
+  
+
 void loadingScreen()
 {
         background(#B4AD1B);
