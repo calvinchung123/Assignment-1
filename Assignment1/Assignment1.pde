@@ -17,7 +17,7 @@ void setup()
   float Sy1=100;
   int Sx =100;
   int Sy = 100;
-  int state = 4;
+  int state = 0;
   int Mx1=0;
   int My1=0;
   int rectx = 0;
@@ -327,6 +327,7 @@ void draw()
          }
          if(rad2>=200)
           {
+            noStroke();
             fill(255,0,0);
             ellipse(450,500,25,25);
             noFill();
@@ -343,8 +344,31 @@ void draw()
             ellipse(200,600,25,25);
             noFill();
           }
-          
-  
+          if (keyPressed)
+          {  
+            if(key == 'q')
+            {
+              ButtonQ.buttonPressed = true;
+              state = 2;
+            }
+            if(key == 'w')
+            {
+              ButtonW.buttonPressed = true;
+              state =3;
+            }
+            if(key == 'o')
+            {
+              ButtonO.buttonPressed = true;
+              state =4;
+            }
+            if(key == 'p')
+            {
+              ButtonP.buttonPressed = true;
+              state=1;
+              fuel=0;
+            }
+          } 
+          break;
   }
 
 }
